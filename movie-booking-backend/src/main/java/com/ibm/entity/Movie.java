@@ -34,7 +34,7 @@ public class Movie {
 	@OneToOne
 	@JoinColumn(name="des_id")
 	private Description description;
-	@OneToMany(mappedBy = "show_id",cascade = CascadeType.ALL ) 
+	@OneToMany(mappedBy = "movie",cascade = CascadeType.ALL ) 
 	private List<ShowScreen> shows=new ArrayList<ShowScreen>(); 
 
 	public Movie() {

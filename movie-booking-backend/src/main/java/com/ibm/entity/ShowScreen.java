@@ -33,7 +33,7 @@ public class ShowScreen {
 	@Column(name = "status_show", length = 10)
 	private String statusShow;
 	
-	@OneToMany(mappedBy="seat_id",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="showScreens",cascade = CascadeType.ALL)
 	private List<Seat> totalSeats=new ArrayList<Seat>();
 	@ManyToOne
 	@JoinColumn(name="movie_id") 
