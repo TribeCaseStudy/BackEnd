@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
  * showId(GeneratedValue) status(avail/non_avail) showTime showDate Seat[] Movie
  * Screen
  */
-@Entity
+@Entity(name="show")
 public class ShowScreen {
 
 	@Id

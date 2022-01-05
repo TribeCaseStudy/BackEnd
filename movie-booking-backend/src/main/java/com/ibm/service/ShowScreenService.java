@@ -8,15 +8,16 @@ import com.ibm.entity.ShowScreen;
 
 public interface ShowScreenService {
 	
-	void addShow(ShowScreen showScreen);
+	/**first check the presence of data by using the following:
+	 * Boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo,String statusShow);
+	 * if its false then add */
+	void addShow(ShowScreen showScreen);//movieId is null initially
 	
 	void updateShow(ShowScreen showScreen);
 	
-	List<ShowScreen> listShowsAllScreenShow(int movieId);
-	
 	List<ShowScreen> listShowsAllByShowDate(LocalDate showDate);
 	
-	ShowScreen findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo);
+	Boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo,String statusShow);
 	
 	ShowScreen findShowByShowId(int showId);
 	
