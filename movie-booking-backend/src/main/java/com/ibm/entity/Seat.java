@@ -20,6 +20,7 @@ public class Seat {
 	@GeneratedValue
 	@Column(name = "seat_id")
 	private int seatId;
+	@Column(name="seat_no")
 	private int seatNo;
 	@Column(name = "status_seat", length = 10)
 	private String statusSeat;

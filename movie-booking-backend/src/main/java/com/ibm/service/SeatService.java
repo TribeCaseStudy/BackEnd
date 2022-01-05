@@ -6,9 +6,11 @@ import com.ibm.entity.Seat;
 
 public interface SeatService {
 	
-	void addSeats(Seat seat);
+	void addSeats(Seat seat,int showId);//booking_id=null by default
 	
-	void updateSeat(Seat seat);
+	void updateAllSeatStatusByBookingId(int bookingId,String status);
+	
+	void updateSeat(int bookingId,int seatId,int seatNo);
 	
 	List<Seat> findAllSeatsByShowId(int showId);
 	

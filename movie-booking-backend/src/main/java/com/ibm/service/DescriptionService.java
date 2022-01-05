@@ -10,7 +10,7 @@ public interface DescriptionService {
 	
 	void updateDescription(Description d);
 	
-	List<Description> deleteDescription();
+	boolean deleteDescription();
 	
 	Description findByDescriptionId(int DesId);
 

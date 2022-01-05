@@ -19,5 +19,7 @@ public interface ShowScreenService {
 	ShowScreen findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo);
 	
 	ShowScreen findShowByShowId(int showId);
+	
+	List<ShowScreen> findAllByMovieId(int movieId);
 
 }
