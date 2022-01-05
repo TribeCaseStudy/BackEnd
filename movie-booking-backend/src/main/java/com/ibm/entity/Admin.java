@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * emailId(Id) 
- * password
+ * emailId(Id)  password
  */
 @Entity
 public class Admin {
