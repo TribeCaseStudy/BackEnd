@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 tribe token: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
+=======
+tribe token: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
+>>>>>>> dfcdab55eac32f507fe953139643e64fc83481f8
 Change
