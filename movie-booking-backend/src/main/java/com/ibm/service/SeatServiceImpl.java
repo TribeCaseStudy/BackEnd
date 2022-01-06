@@ -31,14 +31,22 @@ public class SeatServiceImpl implements SeatService {
 
 	@Override
 	public void updateAllSeatStatusByBookingId(int bookingId) {//this is used only for making the seats unavailable as per booking_id
-		repo.updateAllSeatStatusByBookingId(bookingId);
+		
+		List<Seat> seats=repo.findAllSeatsByBookingId(bookingId);
+		for(Seat seat:seats)
+		{
+			seat.setStatusSeat("vacant");
+			seat.setBooking(null);
+		}
+		repo.saveAll(seats);
 
 	}
 
 	@Override
 	public void updateSeatsBookingId(int bookingId, int showId, int seatNo) {
-		repo.updateSeat(bookingId, showId, seatNo);
-
+		Seat s=repo.findByShowIdAndSeatNo(showId, seatNo);
+		s.setBooking(bookRepo.getById(bookingId));
+		repo.save(s);
 	}
 
 	@Override

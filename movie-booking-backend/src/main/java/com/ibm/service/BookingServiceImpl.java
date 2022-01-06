@@ -38,7 +38,9 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public void updateBooking(int bookingId) {
-		repo.updateStatus(bookingId);
+		Booking b=repo.findById(bookingId).get();
+		b.setStatusBooking("cancel");
+		repo.save(b);
 		
 	}
 
