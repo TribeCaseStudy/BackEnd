@@ -92,4 +92,22 @@ public class ShowScreen {
 		this.statusShow = statusShow;
 	}
 
+	public List<Seat> getTotalSeats() {
+		return totalSeats;
+	}
+
+	public void setTotalSeats(List<Seat> totalSeats) {
+		this.totalSeats = totalSeats;
+	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+	
+	
+
 }

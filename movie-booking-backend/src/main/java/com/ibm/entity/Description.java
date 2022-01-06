@@ -95,4 +95,14 @@ public class Description {
 		this.producer = producer;
 	}
 
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+	
+	
+
 }

@@ -67,4 +67,22 @@ public class Seat {
 		this.statusSeat = status;
 	}
 
+	public ShowScreen getShowScreens() {
+		return showScreens;
+	}
+
+	public void setShowScreens(ShowScreen showScreens) {
+		this.showScreens = showScreens;
+	}
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
+	
+	
+
 }

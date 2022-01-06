@@ -10,8 +10,6 @@ import com.ibm.entity.Movie;
 
 public interface MovieRepository extends JpaRepository<Movie, Integer>{
 
-	@Query(value="select * from movie where show_id=:sid", nativeQuery = true)
-	List<Movie> findAllMovieByShowId(@Param("sid") int showId);
 	
 	@Query(value="select * from movie where des_id=:did", nativeQuery = true)
 	Movie findMovieByDescriptionId(@Param("did") int descriptionId);

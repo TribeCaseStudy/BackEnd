@@ -81,4 +81,37 @@ public class Movie {
 		this.language = language;
 	}
 
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
+	public Booking getBooking() {
+		return booking;
+	}
+
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
+
+	public Description getDescription() {
+		return description;
+	}
+
+	public void setDescription(Description description) {
+		this.description = description;
+	}
+
+	public List<ShowScreen> getShows() {
+		return shows;
+	}
+
+	public void setShows(List<ShowScreen> shows) {
+		this.shows = shows;
+	}
+
+	
 }
