@@ -8,9 +8,9 @@ public interface SeatService {
 	
 	void addSeats(Seat seat,int showId);//booking_id=null by default
 	
-	void updateAllSeatStatusByBookingId(int bookingId,String status);
+	void updateAllSeatStatusByBookingId(int bookingId);
 	
-	void updateSeat(int bookingId,int seatId,int seatNo);
+	void updateSeatsBookingId(int bookingId,int showId,int seatNo);
 	
 	List<Seat> findAllSeatsByShowId(int showId);
 	

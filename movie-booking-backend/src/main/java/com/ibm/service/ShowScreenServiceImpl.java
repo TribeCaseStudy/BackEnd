@@ -4,45 +4,56 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.ibm.entity.ShowScreen;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.ibm.entity.ShowScreen;
+import com.ibm.repo.MovieRepository;
+import com.ibm.repo.ShowScreenRepository;
+
+@Service
 public class ShowScreenServiceImpl implements ShowScreenService {
 
+	@Autowired
+	private ShowScreenRepository repo;
+	
+	@Autowired
+	private MovieRepository mRepo; 
+	
 	@Override
-	public void addShow(ShowScreen showScreen) {
-		// TODO Auto-generated method stub
-
+	public void addShow(ShowScreen showScreen,int movieId) {
+		showScreen.setMovie(mRepo.findById(movieId).get());
+		repo.save(showScreen);
 	}
 
 	@Override
-	public void updateShow(ShowScreen showScreen) {
-		// TODO Auto-generated method stub
+	public void updateShow(ShowScreen showScreen, int movieId) {
+		showScreen.setMovie(mRepo.getById(movieId));
+		repo.save(showScreen);
 
 	}
 
 	@Override
 	public List<ShowScreen> listShowsAllByShowDate(LocalDate showDate) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findAllByShowDate(showDate);
 	}
 
 	@Override
 	public Boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate, LocalTime showTime, int screenNo,
 			String statusShow) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findShowByShowTimeAndShowDateAndScreenNo(showDate, showTime, screenNo, statusShow);
 	}
 
 	@Override
 	public ShowScreen findShowByShowId(int showId) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.findById(showId).get();
 	}
 
 	@Override
 	public List<ShowScreen> findAllByMovieId(int movieId) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.findAllByMovieId(movieId);
 	}
 
 }
