@@ -24,7 +24,7 @@ public class Booking {
 	@Column(name = "booking_id")
 	private int bookingId;
 	@Column(name = "status_booking", length = 10)
-	private String statusBooking;
+	private String statusBooking;//cancel or book
 
 	@OneToOne
 	@JoinColumn(name="movie_id")

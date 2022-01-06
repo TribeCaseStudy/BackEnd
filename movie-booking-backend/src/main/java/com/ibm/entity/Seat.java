@@ -23,7 +23,7 @@ public class Seat {
 	@Column(name="seat_no")
 	private int seatNo;
 	@Column(name = "status_seat", length = 10)
-	private String statusSeat;
+	private String statusSeat;//vacant or occupied
 	
 	@ManyToOne
 	@JoinColumn(name="show_id")

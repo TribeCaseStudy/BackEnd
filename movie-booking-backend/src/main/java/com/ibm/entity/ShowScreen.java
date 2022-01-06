@@ -31,7 +31,7 @@ public class ShowScreen {
 	@Column(name = "show_time")
 	private LocalTime showTime;
 	@Column(name = "status_show", length = 10)
-	private String statusShow;
+	private String statusShow;//avail or not_avail
 	
 	@OneToMany(mappedBy="showScreens",cascade = CascadeType.ALL)
 	private List<Seat> totalSeats=new ArrayList<Seat>();
