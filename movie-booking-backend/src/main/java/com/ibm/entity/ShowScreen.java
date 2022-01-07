@@ -20,13 +20,14 @@ import javax.persistence.Table;
  * Screen
  */
 @Entity
-@Table(name="show")
+@Table(name="show_screen")
 public class ShowScreen {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "show_id")
 	private int showId;
+	@Column(name="screen_no")
 	private int screen;
 	@Column(name = "show_date")
 	private LocalDate showDate;
