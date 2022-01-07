@@ -22,7 +22,7 @@ public class ShowScreenServiceImpl implements ShowScreenService {
 	
 	@Override
 	public void addShow(ShowScreen showScreen,int movieId) {
-		showScreen.setMovie(mRepo.findById(movieId).get());
+		showScreen.setMovie(mRepo.getById(movieId));
 		repo.save(showScreen);
 	}
 

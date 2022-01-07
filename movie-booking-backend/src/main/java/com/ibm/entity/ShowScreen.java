@@ -13,12 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * showId(GeneratedValue) status(avail/non_avail) showTime showDate Seat[] Movie
  * Screen
  */
-@Entity(name="show")
+@Entity
+@Table(name="show")
 public class ShowScreen {
 
 	@Id

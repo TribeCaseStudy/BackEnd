@@ -12,7 +12,7 @@ import com.ibm.entity.ShowScreen;
 
 public interface ShowScreenRepository extends JpaRepository<ShowScreen, Integer>{
 
-	@Query(value = "select * from show where show_date=:date and show_time=:time and screen_no=:no and status_show=:stat",nativeQuery = true)
+	@Query(value = "select * from show where show_date=:date and show_time=:time and screen_no=:sno and status_show=:stat",nativeQuery = true)
 	Boolean findShowByShowTimeAndShowDateAndScreenNo(@Param("date") LocalDate showDate,@Param("time") LocalTime showTime,@Param("sno") int screenNo,@Param("stat") String statusShow);
 	
 	@Query(value = "select * from show where movie_id=:mid",nativeQuery = true)

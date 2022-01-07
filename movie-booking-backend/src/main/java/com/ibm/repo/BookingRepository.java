@@ -10,7 +10,7 @@ import com.ibm.entity.Booking;
 
 public interface BookingRepository extends JpaRepository<Booking, Integer>{
 
-	@Query(value="select * from booking where email_id_user=:userId",nativeQuery = true)
+	@Query(value="select * from booking where email_id_user=:uid",nativeQuery = true)
 	List<Booking> findAllByUserId(@Param("uid") String userId);
 	
 }
