@@ -15,4 +15,6 @@ public interface MovieService {
 	List<Movie> findAllMovie();
 	
 	Movie findByDescriptionId(int desId);
+	
+	Movie findByMovieId(int movieId);
 }

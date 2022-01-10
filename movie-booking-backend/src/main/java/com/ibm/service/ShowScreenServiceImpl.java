@@ -39,7 +39,7 @@ public class ShowScreenServiceImpl implements ShowScreenService {
 	}
 
 	@Override
-	public Boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate, LocalTime showTime, int screenNo,
+	public boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate, LocalTime showTime, int screenNo,
 			String statusShow) {
 		return repo.findShowByShowTimeAndShowDateAndScreenNo(showDate, showTime, screenNo, statusShow);
 	}

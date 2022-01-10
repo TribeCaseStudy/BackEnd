@@ -17,7 +17,7 @@ public interface ShowScreenService {
 	
 	List<ShowScreen> listShowsAllByShowDate(LocalDate showDate);
 	
-	Boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo,String statusShow);
+	boolean findShowByShowTimeAndShowDateAndScreenNo(LocalDate showDate,LocalTime showTime,int screenNo,String statusShow);
 	
 	ShowScreen findShowByShowId(int showId);
 	
