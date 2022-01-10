@@ -29,7 +29,7 @@ public class ShowScreenController {
 		service.addShow(s, movieId);
 	}
 	
-	@PutMapping(value="/show/update/{movieId}",consumes = "application.json")
+	@PutMapping(value="/show/update/{movieId}",consumes = "application/json")
 	public void updateShow(@RequestBody ShowScreen showScreen,@PathVariable int movieId)
 	{
 		service.updateShow(showScreen, movieId);
