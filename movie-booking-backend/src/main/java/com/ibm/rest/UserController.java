@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.User;
+import com.ibm.pojo.EMail;
 import com.ibm.pojo.Login;
 import com.ibm.service.UserService;
 
@@ -26,6 +27,8 @@ public class UserController {
 	public void addUser(@RequestBody User user)
 	{
 		service.addUser(user);
+		EMail email=new EMail();
+		email.conn(user.getEmailId());
 	}
 	
 	@GetMapping(value="/user/{email}/{password}",produces = "application/json")
