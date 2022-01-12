@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 /**
  * seadtId(GeneratedValue) Booking Seat_no Status(occupied/empty) ShowScreen
  */
@@ -25,9 +27,12 @@ public class Seat {
 	@Column(name = "status_seat", length = 10)
 	private String statusSeat;//vacant or occupied
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="show_id")
 	private ShowScreen showScreens;
+	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="booking_id") 
 	private Booking booking; 

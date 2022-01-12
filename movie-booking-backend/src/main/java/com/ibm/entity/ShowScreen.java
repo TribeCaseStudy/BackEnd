@@ -15,6 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * showId(GeneratedValue) status(avail/non_avail) showTime showDate Seat[] Movie
  * Screen
@@ -36,8 +39,10 @@ public class ShowScreen {
 	@Column(name = "status_show", length = 10)
 	private String statusShow;//avail or not_avail
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="showScreens",cascade = CascadeType.ALL)
 	private List<Seat> totalSeats=new ArrayList<Seat>();
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="movie_id") 
 	private Movie movie;

@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * description_Id(GeneratedValue) Writer actor actress director producer Movie
  */
@@ -28,6 +30,7 @@ public class Description {
 	@Column(length = 30)
 	private String producer;
 	
+	@JsonManagedReference
 	@OneToOne(mappedBy = "description",cascade = CascadeType.ALL)
 	private Movie movie;
 

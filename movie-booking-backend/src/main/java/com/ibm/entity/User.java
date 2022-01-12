@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * emailId(Id) User_name mobile_no age password Booking[]
  */
@@ -27,6 +29,7 @@ public class User {
 	@Column(name = "age")
 	private int age;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL) 
 	private List<Booking> bookings = new ArrayList<Booking>();
 

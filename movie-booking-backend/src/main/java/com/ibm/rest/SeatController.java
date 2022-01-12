@@ -25,12 +25,7 @@ public class SeatController {
 	@PostMapping(value="/seat/{showId}",consumes = "application/json" )
 	public void addSeat(@RequestBody Seat seat,@PathVariable int showId)
 	{
-		List<Seat> seats=new ArrayList<Seat>();
-		for(int i=1;i<=10;i++)
-		{
-		seats.add(seat);
-		}
-		service.addSeats(seats, showId);
+		service.addSeats(seat, showId);
 	}
 	
 	@PutMapping(value="/seat/stat/{bookingId}",consumes="application/json")

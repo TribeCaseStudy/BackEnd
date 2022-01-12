@@ -16,6 +16,6 @@ public interface SeatService {
 	
 	List<Seat> findAllSeatsByBookingId(int bookingId);
 
-	void addSeats(List<Seat> seats, int showId);
+	void addSeats(Seat seats, int showId);
 	
 }

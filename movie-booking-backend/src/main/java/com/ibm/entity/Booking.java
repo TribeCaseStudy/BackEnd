@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * BookingId(GeneratedValue) Status(cancelled/booked) Seat[] User
  */
@@ -26,11 +29,14 @@ public class Booking {
 	@Column(name = "status_booking", length = 10)
 	private String statusBooking;//cancel or book
 
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="movie_id")
 	private Movie movie;
+	@JsonManagedReference
 	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
 	private List<Seat> seats = new ArrayList<Seat>();
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="email_id_user")
 	private User user;

@@ -22,17 +22,11 @@ public class SeatServiceImpl implements SeatService {
 	private ShowScreenRepository showRepo;
 	
 	@Override
-	public void addSeats(List<Seat> seats, int showId) {
-		seats.forEach(seat->seat.setBooking(null));
-		seats.forEach(seat->{
-			
-			seat.setSeatId(0);
-			seat.setStatusSeat("vacant");
-			seat.setSeatNo(seats.indexOf(seat)+1);
-			
-		});
-		seats.forEach(seat->seat.setShowScreens(showRepo.findById(showId).get()));
-		repo.saveAll(seats);
+	public void addSeats(Seat seats, int showId) {
+		
+		seats.setBooking(null);
+		seats.setShowScreens(showRepo.findById(showId).get());
+		repo.save(seats);
 
 	}
 

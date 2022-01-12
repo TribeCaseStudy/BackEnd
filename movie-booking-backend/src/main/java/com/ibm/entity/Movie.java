@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * movieId(GeneratedValue) types movie_name language ShowScreen[] Description
  */
@@ -29,11 +32,16 @@ public class Movie {
 	@Column(length=15)
 	private String language;
 	
+	@JsonManagedReference
 	@OneToOne(mappedBy = "movie",cascade = CascadeType.ALL)
 	private Booking booking;
+	
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="des_id")
 	private Description description;
+	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "movie",cascade = CascadeType.ALL ) 
 	private List<ShowScreen> shows=new ArrayList<ShowScreen>(); 
 
