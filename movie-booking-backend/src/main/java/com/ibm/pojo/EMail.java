@@ -13,7 +13,7 @@ import javax.mail.internet.MimeMessage;
 
 public class EMail {
 	
-	public void conn(String recipient)
+	public void conn(String recipient,String name)
 	{
 		String sender="deepshikha4862@gmail.com";
 		
@@ -45,10 +45,10 @@ public class EMail {
 			
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
 			
-			message.setSubject("This is subject");
+			message.setSubject("Blockbusters");
 			
 			message.setContent("<h1> welcome to Blockbuster movie booking application </h1>"
-					+ "<h6>thank you for trusting us</h6>"
+					+ "<h6>thank you for trusting us</h6>"+name
 					+ "<h6>may you have wonferful experience</h6>","text/html");
 			
 			//message.setText("text mail test");
