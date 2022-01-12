@@ -1,5 +1,6 @@
 package com.ibm.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,12 @@ public class SeatController {
 	@PostMapping(value="/seat/{showId}",consumes = "application/json" )
 	public void addSeat(@RequestBody Seat seat,@PathVariable int showId)
 	{
-		service.addSeats(seat, showId);
+		List<Seat> seats=new ArrayList<Seat>();
+		for(int i=1;i<=10;i++)
+		{
+		seats.add(seat);
+		}
+		service.addSeats(seats, showId);
 	}
 	
 	@PutMapping(value="/seat/stat/{bookingId}",consumes="application/json")

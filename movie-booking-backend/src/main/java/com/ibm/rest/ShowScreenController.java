@@ -44,7 +44,8 @@ public class ShowScreenController {
 	@GetMapping(value="/show/check/{date}/{time}/{sno}/{stat}",produces = "application/json")
 	public boolean findByDateAndTime(@PathVariable LocalDate date,@PathVariable LocalTime time,@PathVariable int sno,@PathVariable String stat)
 	{
-		return service.findShowByShowTimeAndShowDateAndScreenNo(date, time, sno, stat);
+		service.findShowByShowTimeAndShowDateAndScreenNo(date, time, sno, stat);
+		return true;
 	}
 	
 	@GetMapping(value="/show/sid/{showId}",produces = "application/json")

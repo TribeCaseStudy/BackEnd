@@ -38,7 +38,7 @@ public class DescriptionController {
 		return service.deleteDescription(desId);
 	}
 	
-	@GetMapping(value="/des/show",produces = "application/json")
+	@GetMapping(value="/des/show/{desId}",produces = "application/json")
 	public Description findByDesId(@PathVariable int desId)
 	{
 		return service.findByDescriptionId(desId);

@@ -22,19 +22,19 @@ public class MovieController {
 	@Autowired
 	private MovieService service;
 	
-	@PostMapping(value="/movie",consumes = "application/json")
+	@PostMapping(value="/movie/{desId}",consumes = "application/json")
 	public void addMovie(@PathVariable int desId,@RequestBody Movie m)
 	{
 		service.addMovie(desId, m);
 	}
 	
-	@PutMapping(value="/movie/update",consumes = "application/json")
+	@PutMapping(value="/movie/update/{desId}",consumes = "application/json")
 	public void updateMovie(@PathVariable int desId,@RequestBody Movie movie)
 	{
 		service.updateMovie(desId, movie);
 	}
 	
-	@DeleteMapping(value="/movie/del",produces = "application/json")
+	@DeleteMapping(value="/movie/del/{movieId}",produces = "application/json")
 	public List<Movie> deleteMovie(@PathVariable int movieId)
 	{
 		return service.deleteMovieById(movieId);
