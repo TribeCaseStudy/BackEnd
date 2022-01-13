@@ -36,10 +36,12 @@ public class BookingController {
 		return service.findAllByUserId(userId);
 	}
 	
-	@PutMapping(value="/booking/update/{bookingId}",consumes = "application/json")
-	public void updateBooking(@PathVariable int bookingId)
+	@PutMapping(value="/booking/update/{bookingId}/{userId}")
+	public void updateBooking(@PathVariable int bookingId,@PathVariable String userId)
 	{
 		service.updateBooking(bookingId);
+		EMail email=new EMail();
+		email.conn(userId,"<h1> your booking is cancelled </h1>"+bookingId);
 	}
 
 }

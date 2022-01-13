@@ -41,12 +41,10 @@ public class SeatController {
 		return service.findAllByBookingId(bookingId);
 	}
 	
-	@PutMapping(value="/seat/stat/{bookingId}/{showId}",consumes = "application/json")
-	public void updateSeatStat(@RequestBody Seat seat,@PathVariable int bookingId,@PathVariable int showId)
+	@PutMapping(value="/seat/{stat}/{bookingId}/{showId}/{seatId}",consumes = "application/json")
+	public void updateSeatStat(@PathVariable int seatId,@PathVariable int bookingId,@PathVariable int showId,@PathVariable String stat)
 	{
-		service.updateAllSeatStatusByBookingId(seat, bookingId,showId);
-//		EMail email=new EMail();
-//		email.conn(userId,"<h1> your booking is done </h1>"+bookingId);
+		service.updateAllSeatStatusByBookingId(seatId, bookingId,showId,stat);
 	}
 
 }

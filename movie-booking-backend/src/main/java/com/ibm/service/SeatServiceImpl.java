@@ -31,9 +31,11 @@ public class SeatServiceImpl implements SeatService {
 	}
 
 	@Override
-	public void updateAllSeatStatusByBookingId(Seat seat,int bookingId,int showId) {
+	public void updateAllSeatStatusByBookingId(int seatId,int bookingId,int showId,String stat) {
+		Seat seat=repo.findById(seatId).get();
 		seat.setShowScreens(showRepo.findById(showId).get());
 		seat.setBooking(bookRepo.findById(bookingId).get());
+		seat.setStatusSeat(stat);
 		repo.save(seat);
 	}
 

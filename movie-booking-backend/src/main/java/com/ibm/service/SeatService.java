@@ -12,6 +12,6 @@ public interface SeatService {
 	
 	List<Seat> findAllByBookingId(int bookingId);
 
-	void updateAllSeatStatusByBookingId(Seat seat,int bookingId,int showId);
+	void updateAllSeatStatusByBookingId(int seatId,int bookingId,int showId,String stat);
 	
 }
