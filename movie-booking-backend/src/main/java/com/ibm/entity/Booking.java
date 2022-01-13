@@ -33,9 +33,11 @@ public class Booking {
 	@OneToOne
 	@JoinColumn(name="movie_id")
 	private Movie movie;
-	@JsonManagedReference
+	
+	@JsonManagedReference(value="book_seat")
 	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
 	private List<Seat> seats = new ArrayList<Seat>();
+	
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="email_id_user")

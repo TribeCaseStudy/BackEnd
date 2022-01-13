@@ -27,7 +27,7 @@ public class BookingController {
 		service.bookingAdd(b, userId, movieId);
 	}
 	
-	@GetMapping(value="/booking/all",produces = "application/json")
+	@GetMapping(value="/booking/all/{userId}",produces = "application/json")
 	public List<Booking> findAllByUserId(@PathVariable String userId)
 	{
 		return service.findAllByUserId(userId);

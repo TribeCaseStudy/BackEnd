@@ -28,26 +28,22 @@ public class SeatController {
 		service.addSeats(seat, showId);
 	}
 	
-	@PutMapping(value="/seat/stat/{bookingId}",consumes="application/json")
-	public void updateSeatStatus(@PathVariable int bookingId)
-	{
-		service.updateAllSeatStatusByBookingId(bookingId);
-	}
-	
-	@PutMapping(value="/seat/update/{bookingId}/{showId}/{seatNo}",consumes="application/json")
-	public void updateSeatsBookingId(@PathVariable int bookingId,@PathVariable int showId,@PathVariable int seatNo)
-	{
-		service.updateSeatsBookingId(bookingId, showId, seatNo);
-	}
 	@GetMapping(value="/seat/sid/{showId}",produces = "application/json")
 	public List<Seat> findByShowId(@PathVariable int showId)
 	{
 		return service.findAllSeatsByShowId(showId);
 	}
+	
 	@GetMapping(value="/seat/bid/{bookingId}",produces = "application/json")
 	public List<Seat> findByBookingId(@PathVariable int bookingId)
 	{
-		return service.findAllSeatsByBookingId(bookingId);
+		return service.findAllByBookingId(bookingId);
+	}
+	
+	@PutMapping(value="/seat/stat/{bookingId}",consumes = "application/json")
+	public void updateSeatStat(@RequestBody Seat seat,@PathVariable int bookingId)
+	{
+		service.updateAllSeatStatusByBookingId(seat, bookingId);
 	}
 
 }

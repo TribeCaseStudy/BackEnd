@@ -27,12 +27,12 @@ public class Seat {
 	@Column(name = "status_seat", length = 10)
 	private String statusSeat;//vacant or occupied
 	
-	@JsonBackReference
+	@JsonBackReference(value="show_seat")
 	@ManyToOne
 	@JoinColumn(name="show_id")
 	private ShowScreen showScreens;
 	
-	@JsonBackReference
+	@JsonBackReference(value="book_seat")
 	@ManyToOne
 	@JoinColumn(name="booking_id") 
 	private Booking booking; 

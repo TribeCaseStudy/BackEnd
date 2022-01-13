@@ -39,9 +39,10 @@ public class ShowScreen {
 	@Column(name = "status_show", length = 10)
 	private String statusShow;//avail or not_avail
 	
-	@JsonManagedReference
+	@JsonManagedReference(value="show_seat")
 	@OneToMany(mappedBy="showScreens",cascade = CascadeType.ALL)
 	private List<Seat> totalSeats=new ArrayList<Seat>();
+	
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="movie_id") 
