@@ -47,9 +47,7 @@ public class EMail {
 			
 			message.setSubject("Blockbusters");
 			
-			message.setContent("<h1> welcome to Blockbuster movie booking application </h1>"
-					+ "<h6>thank you for trusting us</h6>"+name
-					+ "<h6>may you have wonferful experience</h6>","text/html");
+			message.setContent(name,"text/html");
 			
 			//message.setText("text mail test");
 			

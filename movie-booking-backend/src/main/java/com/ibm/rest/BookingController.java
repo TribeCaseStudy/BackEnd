@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Booking;
+import com.ibm.pojo.EMail;
 import com.ibm.service.BookingService;
 
 @CrossOrigin
@@ -21,10 +22,12 @@ public class BookingController {
 	@Autowired 
 	private BookingService service;
 	
-	@PostMapping(value="/booking/{userId}/{movieId}",consumes="application/json")
-	public void saveBooking(@RequestBody Booking b,@PathVariable String userId,@PathVariable int movieId)
+	@PostMapping(value="/booking/{userId}",consumes="application/json")
+	public void saveBooking(@RequestBody Booking b,@PathVariable String userId)
 	{
-		service.bookingAdd(b, userId, movieId);
+		service.bookingAdd(b, userId);
+		EMail email=new EMail();
+		email.conn(userId,"<h1> your booking is done </h1>"+b.getBookingId());
 	}
 	
 	@GetMapping(value="/booking/all/{userId}",produces = "application/json")

@@ -16,16 +16,16 @@ public class BookingServiceImpl implements BookingService {
 	@Autowired
 	private BookingRepository repo;
 	
-	@Autowired
-	private MovieRepository mRepo;
+//	@Autowired
+//	private MovieRepository mRepo;
 	
 	@Autowired
 	private UserRepository uRepo;
 	
 	@Override
-	public void bookingAdd(Booking booking, String userId,int movieId) {
+	public void bookingAdd(Booking booking, String userId) {
 	
-		booking.setMovie(mRepo.getById(movieId));
+//		booking.setMovie(mRepo.getById(movieId));
 		booking.setUser(uRepo.getById(userId));
 		repo.save(booking);
 	}

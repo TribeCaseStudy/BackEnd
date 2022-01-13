@@ -6,7 +6,7 @@ import com.ibm.entity.Booking;
 
 public interface BookingService {
 	
-	void bookingAdd(Booking booking,String userId,int movieId);
+	void bookingAdd(Booking booking,String userId);
 	
 	void updateBooking(int bookingId);
 	

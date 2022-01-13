@@ -28,7 +28,9 @@ public class UserController {
 	{
 		service.addUser(user);
 		EMail email=new EMail();
-		email.conn(user.getEmailId(),user.getUserName());
+		email.conn(user.getUserName(),"<h1> welcome to Blockbuster movie booking application </h1>"
+				+ "<h6>thank you for trusting us</h6>"+user.getEmailId()
+				+ "<h6>may you have wonferful experience</h6>");
 	}
 	
 	@GetMapping(value="/user/{email}/{password}",produces = "application/json")

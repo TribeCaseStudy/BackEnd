@@ -32,9 +32,9 @@ public class Movie {
 	@Column(length=15)
 	private String language;
 	
-	@JsonManagedReference
-	@OneToOne(mappedBy = "movie",cascade = CascadeType.ALL)
-	private Booking booking;
+//	@JsonManagedReference
+//	@OneToOne(mappedBy = "movie",cascade = CascadeType.ALL)
+//	private Booking booking;
 	
 	@JsonBackReference
 	@OneToOne
@@ -97,13 +97,13 @@ public class Movie {
 		this.movieName = movieName;
 	}
 
-	public Booking getBooking() {
-		return booking;
-	}
+//	public Booking getBooking() {
+//		return booking;
+//	}
 
-	public void setBooking(Booking booking) {
-		this.booking = booking;
-	}
+//	public void setBooking(Booking booking) {
+//		this.booking = booking;
+//	}
 
 	public Description getDescription() {
 		return description;

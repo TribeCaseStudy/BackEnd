@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Seat;
+import com.ibm.pojo.EMail;
 import com.ibm.service.SeatService;
 
 @CrossOrigin
@@ -40,10 +41,12 @@ public class SeatController {
 		return service.findAllByBookingId(bookingId);
 	}
 	
-	@PutMapping(value="/seat/stat/{bookingId}",consumes = "application/json")
-	public void updateSeatStat(@RequestBody Seat seat,@PathVariable int bookingId)
+	@PutMapping(value="/seat/stat/{bookingId}/{showId}",consumes = "application/json")
+	public void updateSeatStat(@RequestBody Seat seat,@PathVariable int bookingId,@PathVariable int showId)
 	{
-		service.updateAllSeatStatusByBookingId(seat, bookingId);
+		service.updateAllSeatStatusByBookingId(seat, bookingId,showId);
+//		EMail email=new EMail();
+//		email.conn(userId,"<h1> your booking is done </h1>"+bookingId);
 	}
 
 }

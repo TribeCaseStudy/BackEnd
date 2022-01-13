@@ -29,10 +29,10 @@ public class Booking {
 	@Column(name = "status_booking", length = 10)
 	private String statusBooking;//cancel or book
 
-	@JsonBackReference
-	@OneToOne
-	@JoinColumn(name="movie_id")
-	private Movie movie;
+//	@JsonBackReference
+//	@OneToOne
+//	@JoinColumn(name="movie_id")
+//	private Movie movie;
 	
 	@JsonManagedReference(value="book_seat")
 	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
@@ -69,13 +69,13 @@ public class Booking {
 		super();
 	}
 
-	public Movie getMovie() {
-		return movie;
-	}
+//	public Movie getMovie() {
+//		return movie;
+//	}
 
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
+//	public void setMovie(Movie movie) {
+//		this.movie = movie;
+//	}
 
 	public List<Seat> getSeats() {
 		return seats;
