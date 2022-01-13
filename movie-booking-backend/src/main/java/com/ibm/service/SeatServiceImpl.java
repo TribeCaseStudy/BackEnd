@@ -34,7 +34,13 @@ public class SeatServiceImpl implements SeatService {
 	public void updateAllSeatStatusByBookingId(int seatId,int bookingId,int showId,String stat) {
 		Seat seat=repo.findById(seatId).get();
 		seat.setShowScreens(showRepo.findById(showId).get());
-		seat.setBooking(bookRepo.findById(bookingId).get());
+		if(bookingId==0)
+		{
+			seat.setBooking(null);
+		}
+		else
+			seat.setBooking(bookRepo.findById(bookingId).get());
+		
 		seat.setStatusSeat(stat);
 		repo.save(seat);
 	}
