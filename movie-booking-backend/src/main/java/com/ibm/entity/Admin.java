@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Admin {
 
 	@Id
-	@Column(name="email_id_adimn",length=50)
+	@Column(name="email_id_admin",length=50)
 	private String emailId;
 	@Column(name="password_admin",length=30)
 	private String password;

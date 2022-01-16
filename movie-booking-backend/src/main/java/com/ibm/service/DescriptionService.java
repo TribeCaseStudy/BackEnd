@@ -13,5 +13,9 @@ public interface DescriptionService {
 	boolean deleteDescription(int desId);
 	
 	Description findByDescriptionId(int DesId);
+	
+	int findDes(String actor,String actress,String director,String producer,String writer);
+	
+	List<Description> findAll();
 
 }

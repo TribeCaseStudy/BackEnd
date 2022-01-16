@@ -1,5 +1,7 @@
 package com.ibm.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Description;
+import com.ibm.repo.MovieRepository;
 import com.ibm.service.DescriptionService;
 
 @CrossOrigin
@@ -21,9 +24,10 @@ public class DescriptionController {
 	private DescriptionService service;
 
 	@PostMapping(value="/des",consumes = "application/json")
-	public void addDes(@RequestBody Description des)
+	public int addDes(@RequestBody Description des)
 	{
 		service.addDescription(des);
+		return des.getDescriptionId();
 	}
 	
 	@PutMapping(value="/des/update",consumes = "application/json")
@@ -43,4 +47,18 @@ public class DescriptionController {
 	{
 		return service.findByDescriptionId(desId);
 	}
+	
+	@GetMapping(value="/des/{actor}/{actress}/{director}/{producer}/{writer}",produces = "application/json")
+	public int findDes(@PathVariable String actor,@PathVariable String actress,@PathVariable String director,@PathVariable String producer,@PathVariable String writer)
+	{
+		return service.findDes(actor, actress, director, producer, writer);
+	}
+	
+	@GetMapping(value="/des/all",produces = "application/json")
+	public List<Description> findAll()
+	{
+		return service.findAll();
+	}
+	
+	
 }
