@@ -42,10 +42,9 @@ public class ShowScreenController {
 	}
 	
 	@GetMapping(value="/show/check/{date}/{time}/{sno}/{stat}",produces = "application/json")
-	public boolean findByDateAndTime(@PathVariable LocalDate date,@PathVariable LocalTime time,@PathVariable int sno,@PathVariable String stat)
+	public ShowScreen findByDateAndTime(@PathVariable LocalDate date,@PathVariable LocalTime time,@PathVariable int sno,@PathVariable String stat)
 	{
-		service.findShowByShowTimeAndShowDateAndScreenNo(date, time, sno, stat);
-		return true;
+		return service.findShowByShowTimeAndShowDateAndScreenNo(date, time, sno, stat);
 	}
 	
 	@GetMapping(value="/show/sid/{showId}",produces = "application/json")
@@ -54,7 +53,7 @@ public class ShowScreenController {
 		return service.findShowByShowId(showId);
 	}
 	
-	@GetMapping(value="show/mid/{movieId}",produces = "application/json")
+	@GetMapping(value="/show/mid/{movieId}",produces = "application/json")
 	public List<ShowScreen> findByMovieid(@PathVariable int movieId)
 	{
 		return service.findAllByMovieId(movieId);
