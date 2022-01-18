@@ -23,4 +23,7 @@ public interface SeatRepositroy extends JpaRepository<Seat, Integer>{
 	@Modifying 
 	@Query(value="update seat set booking_id=:bid where seat_id=:sid",nativeQuery = true)
 	Seat updateSeatStat(@Param("bid") int bookingid,@Param("sid") int seatid);
+	
+	@Query(value="select show_id from seat where seat_id=:seatId",nativeQuery = true)
+	int findShowId(@Param("seatId")int seatId);
 }

@@ -14,4 +14,6 @@ public interface SeatService {
 
 	void updateAllSeatStatusByBookingId(int seatId,int bookingId,int showId,String stat);
 	
+	int showShowId(int seatId);
+	
 }

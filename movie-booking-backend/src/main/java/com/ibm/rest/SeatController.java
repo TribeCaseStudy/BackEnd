@@ -46,5 +46,11 @@ public class SeatController {
 	{
 		service.updateAllSeatStatusByBookingId(seatId, bookingId,showId,stat);
 	}
+	
+	@GetMapping(value="/seat/show/{seatId}",produces = "application/json")
+	public int showShowId(@PathVariable int seatId)
+	{
+		return service.showShowId(seatId);
+	}
 
 }

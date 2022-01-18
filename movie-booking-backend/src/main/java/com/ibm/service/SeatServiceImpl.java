@@ -57,6 +57,12 @@ public class SeatServiceImpl implements SeatService {
 		return repo.findAllSeatsByBookingId(bookingId);
 	}
 
+	@Override
+	public int showShowId(int seatId) {
+		// TODO Auto-generated method stub
+		return repo.findShowId(seatId);
+	}
+
 
 
 }
