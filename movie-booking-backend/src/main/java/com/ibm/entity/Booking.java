@@ -18,7 +18,11 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
- * BookingId(GeneratedValue) Status(cancelled/booked) Seat[] User
+ * booking entity here is used to store booking details of a particular user
+ * 
+ * author: Ardra
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 public class Booking {

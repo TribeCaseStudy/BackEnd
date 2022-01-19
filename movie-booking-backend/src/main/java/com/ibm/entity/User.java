@@ -12,7 +12,11 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
- * emailId(Id) User_name mobile_no age password Booking[]
+ * user entity will have the information of user who is using the booking application
+ * 
+ * author:Jahnavi 
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 public class User {

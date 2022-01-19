@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * emailId(Id)  password
+ * The Admin entity is the admin table in sql database
+ * 
+ * author:Jahnavi
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 public class Admin {

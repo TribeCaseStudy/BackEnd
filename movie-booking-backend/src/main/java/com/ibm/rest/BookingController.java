@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.Booking;
 import com.ibm.pojo.EMail;
 import com.ibm.service.BookingService;
+import com.ibm.service.LoginServiceInterface;
 
 @CrossOrigin
 @RestController
@@ -22,12 +23,14 @@ public class BookingController {
 	@Autowired 
 	private BookingService service;
 	
+	@Autowired
+	private LoginServiceInterface email;
+	
 	@PostMapping(value="/booking/{userId}",consumes="application/json")
 	public void saveBooking(@RequestBody Booking b,@PathVariable String userId)
 	{
 		service.bookingAdd(b, userId);
-		EMail email=new EMail();
-		email.conn(userId,"<h1> your booking is done </h1>"+b.getBookingId());
+		email.bookingConfirmed(userId, b.getBookingId());
 	}
 	
 	@GetMapping(value="/booking/all/{userId}",produces = "application/json")
@@ -40,8 +43,7 @@ public class BookingController {
 	public void updateBooking(@PathVariable int bookingId,@PathVariable String userId)
 	{
 		service.updateBooking(bookingId);
-		EMail email=new EMail();
-		email.conn(userId,"<h1> your booking is cancelled </h1>"+bookingId);
+		email.bookingCancelled(userId, bookingId);
 	}
 
 }

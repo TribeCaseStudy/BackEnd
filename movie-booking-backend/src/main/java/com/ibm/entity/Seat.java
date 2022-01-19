@@ -13,7 +13,12 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
- * seadtId(GeneratedValue) Booking Seat_no Status(occupied/empty) ShowScreen
+ * seat entity will have the seat status in particular show
+ * 
+ * 
+ * author: ardra
+ * version:1.0
+ * since 3 jan 2022
  */
 @Entity
 public class Seat {

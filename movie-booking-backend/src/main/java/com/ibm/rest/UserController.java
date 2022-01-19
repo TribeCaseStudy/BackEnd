@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.User;
 import com.ibm.pojo.EMail;
 import com.ibm.pojo.Login;
+import com.ibm.service.LoginServiceInterface;
 import com.ibm.service.UserService;
 
 @CrossOrigin
@@ -23,14 +24,14 @@ public class UserController {
 	@Autowired
 	private UserService service;
 	
+	@Autowired
+	private LoginServiceInterface email;
+	
 	@PostMapping(value="/user",consumes = "application/json")
 	public void addUser(@RequestBody User user)
 	{
 		service.addUser(user);
-		EMail email=new EMail();
-		email.conn(user.getEmailId(),"<h1> welcome to Blockbuster movie booking application </h1>"
-				+ "<h6>thank you for trusting us</h6>"+user.getUserName()
-				+ "<h6>may you have wonferful experience</h6>");
+		email.userEmailConfirm(user.getEmailId(), user.getUserName());
 	}
 	
 	@GetMapping(value="/user/{email}/{password}",produces = "application/json")

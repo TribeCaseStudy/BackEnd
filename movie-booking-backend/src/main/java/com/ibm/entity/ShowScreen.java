@@ -19,8 +19,12 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
- * showId(GeneratedValue) status(avail/non_avail) showTime showDate Seat[] Movie
- * Screen
+ * show entity will have the show details of movie in a multiplex
+ * 
+ * 
+ * author:ardra
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 @Table(name="show_screen")

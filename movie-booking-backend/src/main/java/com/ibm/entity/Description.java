@@ -10,7 +10,11 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
- * description_Id(GeneratedValue) Writer actor actress director producer Movie
+ * description entity describes the particular movie
+ * 
+ * author:Jahnavi
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 public class Description {

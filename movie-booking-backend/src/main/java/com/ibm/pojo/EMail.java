@@ -11,6 +11,12 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * EMail class here is used to send the messages from admin to user about their activity
+ * 
+ * author: Deepshikha 
+ * since 10 Jan 2022
+ *  */
 public class EMail {
 	
 	public void conn(String recipient,String name)

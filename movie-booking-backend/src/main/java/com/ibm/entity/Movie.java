@@ -16,7 +16,12 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
- * movieId(GeneratedValue) types movie_name language ShowScreen[] Description
+ * movie entity describes the movie details about genre, id, title and language
+ * 
+ * 
+ * author:Jahnavi
+ * version:1.0
+ * since 3 Jan 2022
  */
 @Entity
 public class Movie {
