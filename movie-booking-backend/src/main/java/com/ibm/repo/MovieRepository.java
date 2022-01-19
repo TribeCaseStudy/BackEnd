@@ -13,4 +13,6 @@ public interface MovieRepository extends JpaRepository<Movie, Integer>{
 	
 	@Query(value="select * from movie where des_id=:did", nativeQuery = true)
 	Movie findMovieByDescriptionId(@Param("did") int descriptionId);
+	
+	Movie findMovieByMovieName(String movieName);
 }

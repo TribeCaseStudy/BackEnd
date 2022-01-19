@@ -22,5 +22,7 @@ public interface ShowScreenService {
 	ShowScreen findShowByShowId(int showId);
 	
 	List<ShowScreen> findAllByMovieId(int movieId);
+	
+	int findMovieId(int showId);
 
 }

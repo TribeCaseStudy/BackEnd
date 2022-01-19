@@ -19,4 +19,7 @@ public interface ShowScreenRepository extends JpaRepository<ShowScreen, Integer>
 	List<ShowScreen> findAllByMovieId(@Param("mid") int movieId);
 	
 	List<ShowScreen> findAllByShowDate(LocalDate showDate);
+	
+	@Query(value="select movie_id from show_screen where show_id=:sid",nativeQuery = true)
+	int findMovieId(@Param("sid") int showId);
 }

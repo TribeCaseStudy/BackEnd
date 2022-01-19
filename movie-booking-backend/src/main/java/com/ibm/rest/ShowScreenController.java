@@ -58,4 +58,10 @@ public class ShowScreenController {
 	{
 		return service.findAllByMovieId(movieId);
 	}
+	
+	@GetMapping(value="/show/movie/{showId}",produces = "application/json")
+	public int findMovieId(@PathVariable int showId)
+	{
+		return service.findMovieId(showId);
+	}
 }

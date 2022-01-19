@@ -54,4 +54,10 @@ public class MovieServiceImpl implements MovieService {
 		return repo.findById(movieId).get();
 	}
 
+	@Override
+	public Movie findMovieByMovieName(String movieName) {
+		// TODO Auto-generated method stub
+		return repo.findMovieByMovieName(movieName);
+	}
+
 }

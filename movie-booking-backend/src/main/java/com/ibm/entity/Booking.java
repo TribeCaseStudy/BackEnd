@@ -1,5 +1,6 @@
 package com.ibm.entity;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +29,32 @@ public class Booking {
 	private int bookingId;
 	@Column(name = "status_booking", length = 10)
 	private String statusBooking;//cancel or book
+	@Column(name = "booking_date")
+	private LocalDate bookingDate;
+	@Column(name="booking_cancel")
+	private LocalDate cancelDate;
 
 //	@JsonBackReference
 //	@OneToOne
 //	@JoinColumn(name="movie_id")
 //	private Movie movie;
 	
+	public LocalDate getBookingDate() {
+		return bookingDate;
+	}
+
+	public void setBookingDate(LocalDate bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+
+	public LocalDate getCancelDate() {
+		return cancelDate;
+	}
+
+	public void setCancelDate(LocalDate cancelDate) {
+		this.cancelDate = cancelDate;
+	}
+
 	@JsonManagedReference(value="book_seat")
 	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
 	private List<Seat> seats = new ArrayList<Seat>();
@@ -68,14 +89,6 @@ public class Booking {
 	public Booking() {
 		super();
 	}
-
-//	public Movie getMovie() {
-//		return movie;
-//	}
-
-//	public void setMovie(Movie movie) {
-//		this.movie = movie;
-//	}
 
 	public List<Seat> getSeats() {
 		return seats;

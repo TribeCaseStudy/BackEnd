@@ -1,5 +1,6 @@
 package com.ibm.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public void updateBooking(int bookingId) {
 		Booking b=repo.findById(bookingId).get();
+		b.setCancelDate(LocalDate.now());
 		b.setStatusBooking("cancel");
 		repo.save(b);
 		

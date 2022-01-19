@@ -57,5 +57,11 @@ public class MovieController {
 	{
 		return service.findByMovieId(movieId);
 	}
+	
+	@GetMapping(value="/movie/find/{movieName}",produces = "application/json")
+	public Movie findByMovieName(@PathVariable String movieName)
+	{
+		return service.findMovieByMovieName(movieName); 
+	}
 
 }

@@ -56,4 +56,10 @@ public class ShowScreenServiceImpl implements ShowScreenService {
 		return repo.findAllByMovieId(movieId);
 	}
 
+	@Override
+	public int findMovieId(int showId) {
+		// TODO Auto-generated method stub
+		return repo.findMovieId(showId);
+	}
+
 }
