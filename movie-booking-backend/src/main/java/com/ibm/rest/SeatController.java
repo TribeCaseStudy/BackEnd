@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Seat;
 import com.ibm.pojo.EMail;
+import com.ibm.service.LoginInterface;
 import com.ibm.service.SeatService;
 
 @CrossOrigin
@@ -22,6 +23,9 @@ public class SeatController {
 	
 	@Autowired
 	private SeatService service;
+	
+	@Autowired
+	private LoginInterface email;
 	
 	@PostMapping(value="/seat/{showId}",consumes = "application/json" )
 	public void addSeat(@RequestBody Seat seat,@PathVariable int showId)
@@ -41,10 +45,11 @@ public class SeatController {
 		return service.findAllByBookingId(bookingId);
 	}
 	
-	@PutMapping(value="/seat/{stat}/{bookingId}/{showId}/{seatId}",consumes = "application/json")
-	public void updateSeatStat(@PathVariable int seatId,@PathVariable int bookingId,@PathVariable int showId,@PathVariable String stat)
+	@PutMapping(value="/seat/{stat}/{bookingId}/{showId}/{seatId}/{userId}",consumes = "application/json")
+	public void updateSeatStat(@PathVariable int seatId,@PathVariable int bookingId,@PathVariable int showId,@PathVariable String stat,@PathVariable String userId)
 	{
 		service.updateAllSeatStatusByBookingId(seatId, bookingId,showId,stat);
+		email.seatStat(showId, seatId,userId);
 	}
 	
 	@GetMapping(value="/seat/show/{seatId}",produces = "application/json")

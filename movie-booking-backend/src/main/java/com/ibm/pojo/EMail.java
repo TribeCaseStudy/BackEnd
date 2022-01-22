@@ -21,7 +21,7 @@ public class EMail {
 	
 	public void conn(String recipient,String name)
 	{
-		String sender="deepshikha4862@gmail.com";
+		String sender="tribe220122@gmail.com";
 		
 		String host= "smtp.gmail.com";
 		
@@ -39,7 +39,7 @@ public class EMail {
 				{
 					protected PasswordAuthentication getPasswordAuthentication()
 					{
-						return new PasswordAuthentication("deepshikha4862@gmail.com", "Deep@1999#");
+						return new PasswordAuthentication("tribe220122@gmail.com", "Tribe@123#");
 					}
 				});
 		

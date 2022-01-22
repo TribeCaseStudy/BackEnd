@@ -8,4 +8,5 @@ public interface LoginInterface {
 	
 	void bookingCancelled(String userId,int bookingId);
 
+	void seatStat(int showId,int seatId,String userId);
 }
