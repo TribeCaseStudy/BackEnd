@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.entity.Description;
 import com.ibm.repo.MovieRepository;
 import com.ibm.service.DescriptionService;
-
+/**
+ * author : Jahnavi
+ * testing : Ardra*/
 @CrossOrigin
 @RestController
 public class DescriptionController {

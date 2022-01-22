@@ -15,7 +15,9 @@ import com.ibm.entity.Booking;
 import com.ibm.pojo.EMail;
 import com.ibm.service.BookingService;
 import com.ibm.service.LoginServiceInterface;
-
+/**
+ * author : Jahnavi
+ * testing : Deepshikha*/
 @CrossOrigin
 @RestController
 public class BookingController {

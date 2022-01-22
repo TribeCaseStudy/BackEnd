@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 import com.ibm.entity.Admin;
 import com.ibm.pojo.Login;
 import com.ibm.repo.AdminRepository;
-
+/**
+ * author : Apoorva*/
 @Service
 public class AdminServiceImpl implements AdminService {
 

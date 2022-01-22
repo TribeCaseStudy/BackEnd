@@ -9,7 +9,8 @@ import com.ibm.entity.Description;
 import com.ibm.entity.Movie;
 import com.ibm.repo.DescriptionRepository;
 import com.ibm.repo.MovieRepository;
-
+/**
+ * author : Ramya*/
 @Service
 public class DescriptionServiceImpl implements DescriptionService {
 

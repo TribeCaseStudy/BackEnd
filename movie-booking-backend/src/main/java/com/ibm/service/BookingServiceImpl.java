@@ -10,7 +10,8 @@ import com.ibm.entity.Booking;
 import com.ibm.repo.BookingRepository;
 import com.ibm.repo.MovieRepository;
 import com.ibm.repo.UserRepository;
-
+/**
+ * author : Ardra*/
 @Service
 public class BookingServiceImpl implements BookingService {
 

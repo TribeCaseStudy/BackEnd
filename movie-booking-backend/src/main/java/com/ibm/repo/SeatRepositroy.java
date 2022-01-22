@@ -10,7 +10,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.ibm.entity.Seat;
-
+/**
+ * author : Deepshikha*/
 public interface SeatRepositroy extends JpaRepository<Seat, Integer>{
 
 	@Query(value="select * from seat where show_id=:sid",nativeQuery = true)

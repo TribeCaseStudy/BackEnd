@@ -11,6 +11,8 @@ import com.ibm.entity.Seat;
 import com.ibm.repo.BookingRepository;
 import com.ibm.repo.SeatRepositroy;
 import com.ibm.repo.ShowScreenRepository;
+/**
+ * author : Ardra*/
 @Service
 public class SeatServiceImpl implements SeatService {
 

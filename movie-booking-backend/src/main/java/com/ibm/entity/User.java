@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 /**
  * user entity will have the information of user who is using the booking application
  * 
- * author:Jahnavi 
+ * author:Ruksana 
  * version:1.0
  * since 3 Jan 2022
  */

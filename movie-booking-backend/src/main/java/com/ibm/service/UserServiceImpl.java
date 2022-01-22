@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 import com.ibm.entity.User;
 import com.ibm.pojo.Login;
 import com.ibm.repo.UserRepository;
-
+/**
+ * author : Apoorva*/
 @Service
 public class UserServiceImpl implements UserService {
 

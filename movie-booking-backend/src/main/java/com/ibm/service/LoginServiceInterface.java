@@ -11,7 +11,8 @@ import com.ibm.pojo.EMail;
 import com.ibm.repo.BookingRepository;
 import com.ibm.repo.SeatRepositroy;
 import com.ibm.repo.ShowScreenRepository;
-
+/**
+ * author : Deepshikha*/
 @Service
 public class LoginServiceInterface implements LoginInterface{
 

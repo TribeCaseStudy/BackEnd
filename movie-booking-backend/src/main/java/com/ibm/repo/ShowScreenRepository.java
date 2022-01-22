@@ -9,7 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.ibm.entity.ShowScreen;
-
+/**
+ * author : Deepshikha*/
 public interface ShowScreenRepository extends JpaRepository<ShowScreen, Integer>{
 
 	@Query(value = "select * from show_screen where show_date=:date and show_time=:time and screen_no=:sno and status_show=:stat",nativeQuery = true)

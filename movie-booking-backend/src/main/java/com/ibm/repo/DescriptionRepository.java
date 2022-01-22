@@ -6,6 +6,8 @@ import org.springframework.data.repository.query.Param;
 
 import com.ibm.entity.Description;
 
+/**
+ * author : Deepshikha*/
 public interface DescriptionRepository extends JpaRepository<Description, Integer>{
 	
 	@Query(value="select des_id from description where actor=:actor and actress=:actress and director=:director and producer=:producer and writer=:writer",nativeQuery = true)

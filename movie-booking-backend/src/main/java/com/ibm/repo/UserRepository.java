@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.ibm.entity.User;
-
+/**
+ * author : Deepshikha*/
 public interface UserRepository extends JpaRepository<User, String>{
 	
 	@Query(value="select * from user where email_id_user=:email and password_user=:pass",nativeQuery = true)

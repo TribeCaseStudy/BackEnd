@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * The Admin entity is the admin table in sql database
  * 
- * author:Jahnavi
+ * author:Ruksana
  * version:1.0
  * since 3 Jan 2022
  */

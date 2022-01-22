@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Movie;
 import com.ibm.service.MovieService;
-
+/**
+ * author : Jahnavi
+ * testing : Ardra*/
 @CrossOrigin
 @RestController
 public class MovieController {

@@ -16,7 +16,9 @@ import com.ibm.entity.Seat;
 import com.ibm.pojo.EMail;
 import com.ibm.service.LoginInterface;
 import com.ibm.service.SeatService;
-
+/**
+ * author : Jahnavi
+ * testing : Deepshikha*/
 @CrossOrigin
 @RestController
 public class SeatController {

@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  * movie entity describes the movie details about genre, id, title and language
  * 
  * 
- * author:Jahnavi
+ * author:Ruksana
  * version:1.0
  * since 3 Jan 2022
  */

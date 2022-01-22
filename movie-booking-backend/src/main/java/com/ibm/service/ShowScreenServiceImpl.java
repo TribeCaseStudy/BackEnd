@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 import com.ibm.entity.ShowScreen;
 import com.ibm.repo.MovieRepository;
 import com.ibm.repo.ShowScreenRepository;
-
+/**
+ * author : Ardra*/
 @Service
 public class ShowScreenServiceImpl implements ShowScreenService {
 

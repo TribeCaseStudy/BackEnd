@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.ibm.entity.Movie;
-
+/**
+ * author : Deepshikha*/
 public interface MovieRepository extends JpaRepository<Movie, Integer>{
 
 	

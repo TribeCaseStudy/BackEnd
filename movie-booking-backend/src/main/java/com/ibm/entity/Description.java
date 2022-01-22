@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 /**
  * description entity describes the particular movie
  * 
- * author:Jahnavi
+ * author:Ruksana
  * version:1.0
  * since 3 Jan 2022
  */
