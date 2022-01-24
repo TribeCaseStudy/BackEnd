@@ -3,6 +3,8 @@ package com.ibm.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,7 @@ public class BookingServiceImpl implements BookingService {
 	@Autowired
 	private UserRepository uRepo;
 	
+	@Transactional
 	@Override
 	public void bookingAdd(Booking booking, String userId) {
 	
@@ -38,6 +41,7 @@ public class BookingServiceImpl implements BookingService {
 		return repo.findAllByUserId(userId);
 	}
 
+	@Transactional
 	@Override
 	public void updateBooking(int bookingId) {
 		Booking b=repo.findById(bookingId).get();

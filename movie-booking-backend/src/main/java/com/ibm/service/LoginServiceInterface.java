@@ -49,15 +49,11 @@ public class LoginServiceInterface implements LoginInterface{
 		Seat seat=seatRepo.findById(seatId).get();
 		ShowScreen show=showRepo.findById(showId).get();
 		
-		String content="<table>"
-		+"<th><tr>SHOW DATE</tr><tr>SHOW TIME</tr><tr>SCREEN</tr><tr>SEAT NO</tr></th>"
-		+"<td>"
-		+"<tr>"+show.getShowDate()+"</tr>"
-		+"<tr>"+show.getShowTime()+"</tr>"
-		+"<tr>"+show.getScreen()+"</tr>"
-		+"<tr>"+seat.getSeatNo()+"</tr>"
-		+"</td>"
-		+"</table>";
+		String content=
+		"<h2> SHOW DATE : "+show.getShowDate()+"</h2><hr>"
+		+"<h2> SHOW TIME : "+show.getShowTime()+"</h2><hr>"
+		+"<h2> SCREEN : "+show.getScreen()+"</h2><hr>"
+		+"<h2> SEAT NO. : "+seat.getSeatNo()+"</h2><hr>";
 		
 		email.conn(userId, content);
 		

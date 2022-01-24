@@ -1,5 +1,7 @@
 package com.ibm.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired
 	private AdminRepository repo;
 	
+	@Transactional
 	@Override
 	public void addAdmin(Admin admin) {
 		repo.save(admin);

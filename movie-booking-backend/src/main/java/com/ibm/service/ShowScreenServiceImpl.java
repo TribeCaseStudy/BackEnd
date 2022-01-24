@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +23,14 @@ public class ShowScreenServiceImpl implements ShowScreenService {
 	@Autowired
 	private MovieRepository mRepo; 
 	
+	@Transactional
 	@Override
 	public void addShow(ShowScreen showScreen,int movieId) {
 		showScreen.setMovie(mRepo.getById(movieId));
 		repo.save(showScreen);
 	}
 
+	@Transactional
 	@Override
 	public void updateShow(ShowScreen showScreen, int movieId) {
 		showScreen.setMovie(mRepo.getById(movieId));

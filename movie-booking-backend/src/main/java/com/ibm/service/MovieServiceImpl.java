@@ -2,6 +2,8 @@ package com.ibm.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,18 +21,21 @@ public class MovieServiceImpl implements MovieService {
 	@Autowired
 	private DescriptionRepository des_repo;
 	
+	@Transactional
 	@Override
 	public void addMovie(int desId, Movie movie) {
 		movie.setDescription(des_repo.findById(desId).get());
 		repo.save(movie);
 	}
 
+	@Transactional
 	@Override
 	public void updateMovie(int desId, Movie movie) {
 		movie.setDescription(des_repo.findById(desId).get());
 		repo.save(movie);
 	}
 
+	@Transactional
 	@Override
 	public List<Movie> deleteMovieById(int movieId) {
 		// TODO Auto-generated method stub

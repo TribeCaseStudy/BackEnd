@@ -2,6 +2,8 @@ package com.ibm.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,16 +19,19 @@ public class DescriptionServiceImpl implements DescriptionService {
 	@Autowired
 	private DescriptionRepository repo;
 	
+	@Transactional
 	@Override
 	public void addDescription(Description d) {
 		repo.save(d);
 	}
 
+	@Transactional
 	@Override
 	public void updateDescription(Description d) {
 		repo.save(d);
 	}
 
+	@Transactional
 	@Override
 	public boolean deleteDescription(int desId) {
 		repo.deleteById(desId);

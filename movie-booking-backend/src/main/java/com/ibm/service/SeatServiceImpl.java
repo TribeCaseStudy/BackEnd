@@ -25,6 +25,7 @@ public class SeatServiceImpl implements SeatService {
 	@Autowired 
 	private ShowScreenRepository showRepo;
 	
+	@Transactional
 	@Override
 	public void addSeats(Seat seats, int showId) {
 		seats.setShowScreens(showRepo.findById(showId).get());
@@ -32,6 +33,7 @@ public class SeatServiceImpl implements SeatService {
 
 	}
 
+	@Transactional
 	@Override
 	public void updateAllSeatStatusByBookingId(int seatId,int bookingId,int showId,String stat) {
 		Seat seat=repo.findById(seatId).get();
